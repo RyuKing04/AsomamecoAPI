@@ -21,7 +21,7 @@ public partial class Usuario
 
     public int IdRol { get; set; }
 
-    public virtual ICollection<Evento> Eventos { get; set; } = new List<Evento>();
+    public virtual ICollection<Evento>? Eventos { get; set; } = new List<Evento>();
 
-    public virtual Rol IdRolNavigation { get; set; } = null!;
+    public virtual Rol? IdRolNavigation { get; set; }
 }

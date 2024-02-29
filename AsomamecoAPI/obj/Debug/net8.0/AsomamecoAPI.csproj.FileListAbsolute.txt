@@ -134,3 +134,4 @@ C:\Users\Tony9\OneDrive\Documentos\AsomamecoAPI\AsomamecoAPI\obj\Debug\net8.0\re
 C:\Users\Tony9\OneDrive\Documentos\AsomamecoAPI\AsomamecoAPI\obj\Debug\net8.0\AsomamecoAPI.pdb
 C:\Users\Tony9\OneDrive\Documentos\AsomamecoAPI\AsomamecoAPI\obj\Debug\net8.0\AsomamecoAPI.genruntimeconfig.cache
 C:\Users\Tony9\OneDrive\Documentos\AsomamecoAPI\AsomamecoAPI\obj\Debug\net8.0\ref\AsomamecoAPI.dll
+C:\Users\Tony9\OneDrive\Documentos\AsomamecoAPI\AsomamecoAPI\obj\Debug\net8.0\AsomamecoAPI.sourcelink.json
