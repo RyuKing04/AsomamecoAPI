@@ -35,7 +35,7 @@ public partial class AsomamecoContext : DbContext
             entity.ToTable("Asociado");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("id");
             entity.Property(e => e.Apellidos).HasColumnName("apellidos");
             entity.Property(e => e.Cedula).HasColumnName("cedula");
@@ -50,7 +50,7 @@ public partial class AsomamecoContext : DbContext
             entity.ToTable("CateringService");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("id");
             entity.Property(e => e.Correo)
                 .HasMaxLength(50)
@@ -66,7 +66,7 @@ public partial class AsomamecoContext : DbContext
             entity.ToTable("Evento");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("id");
             entity.Property(e => e.Descripcion).HasColumnName("descripcion");
             entity.Property(e => e.Estado).HasColumnName("estado");
@@ -121,8 +121,9 @@ public partial class AsomamecoContext : DbContext
             entity.ToTable("Usuario");
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .ValueGeneratedOnAdd()
                 .HasColumnName("id");
+
             entity.Property(e => e.Apellidos).HasColumnName("apellidos");
             entity.Property(e => e.Cedula).HasColumnName("cedula");
             entity.Property(e => e.Contraseña).HasColumnName("contraseña");

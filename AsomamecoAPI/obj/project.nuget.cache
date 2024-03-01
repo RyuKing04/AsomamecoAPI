@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0CXuvF3KBvXYS42ZeTrS1ecCAEQ1n7wpDMOiLAdtNqqSAg+4WR0yICn79lDul/qFlBJOfLY5dxZ/C3QDhSdDHA==",
+  "dgSpecHash": "cJGlVPQtUFc3nkHSDwmmtn1KkcL2XQTI4vJY+Kw6+ieh+j6YH9+a8m6JqrbMpE8pZhDb3GKhyww9XEhqTftNlQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Tony9\\OneDrive\\Documentos\\AsomamecoAPI\\AsomamecoAPI\\AsomamecoAPI.csproj",
+  "projectFilePath": "C:\\Users\\Tony9\\OneDrive\\Documentos\\ASOMAMECO\\AsomamecoAPI\\AsomamecoAPI\\AsomamecoAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tony9\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Tony9\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

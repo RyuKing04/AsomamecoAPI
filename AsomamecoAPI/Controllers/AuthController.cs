@@ -100,6 +100,13 @@ public class AuthController : ControllerBase
         }
         return sb.ToString();
     }
+
+    [HttpGet("obtenerUsuarios")]
+    public IActionResult ObtenerUsuarios()
+    {
+        var usuarios = _dbContext.Usuarios.ToList();
+        return Ok(usuarios);
+    }   
 }
 
 public class LoginModel
@@ -113,3 +120,4 @@ public class AgregarRolModel
     public int UsuarioId { get; set; }
     public int RolId { get; set; }
 }
+

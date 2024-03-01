@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tony9\\OneDrive\\Documentos\\AsomamecoAPI\\AsomamecoAPI\\AsomamecoAPI.csproj": {}
+    "C:\\Users\\Tony9\\OneDrive\\Documentos\\ASOMAMECO\\AsomamecoAPI\\AsomamecoAPI\\AsomamecoAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tony9\\OneDrive\\Documentos\\AsomamecoAPI\\AsomamecoAPI\\AsomamecoAPI.csproj": {
+    "C:\\Users\\Tony9\\OneDrive\\Documentos\\ASOMAMECO\\AsomamecoAPI\\AsomamecoAPI\\AsomamecoAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tony9\\OneDrive\\Documentos\\AsomamecoAPI\\AsomamecoAPI\\AsomamecoAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Tony9\\OneDrive\\Documentos\\ASOMAMECO\\AsomamecoAPI\\AsomamecoAPI\\AsomamecoAPI.csproj",
         "projectName": "AsomamecoAPI",
-        "projectPath": "C:\\Users\\Tony9\\OneDrive\\Documentos\\AsomamecoAPI\\AsomamecoAPI\\AsomamecoAPI.csproj",
+        "projectPath": "C:\\Users\\Tony9\\OneDrive\\Documentos\\ASOMAMECO\\AsomamecoAPI\\AsomamecoAPI\\AsomamecoAPI.csproj",
         "packagesPath": "C:\\Users\\Tony9\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tony9\\OneDrive\\Documentos\\AsomamecoAPI\\AsomamecoAPI\\obj\\",
+        "outputPath": "C:\\Users\\Tony9\\OneDrive\\Documentos\\ASOMAMECO\\AsomamecoAPI\\AsomamecoAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Tony9\\AppData\\Roaming\\NuGet\\NuGet.Config",
