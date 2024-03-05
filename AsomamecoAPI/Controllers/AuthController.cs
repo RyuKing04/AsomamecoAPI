@@ -4,6 +4,10 @@ using System.Security.Cryptography;
 using System.Text;
 using AsomamecoAPI.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+
 
 namespace AsomamecoAPI.Controllers;
 
@@ -12,10 +16,12 @@ namespace AsomamecoAPI.Controllers;
 public class AuthController : ControllerBase
 {
 	private readonly AsomamecoContext _dbContext;
+    private readonly string _jwtSecret;
 
 	public AuthController(AsomamecoContext dbContext)
 	{
-		_dbContext = dbContext;
+	    _dbContext = dbContext;
+        _jwtSecret = "KGGK>HKHVHJVKBKJKJBKBKHKBMKHB";
 	}
 
     [HttpPost("registro")]
@@ -48,16 +54,57 @@ public class AuthController : ControllerBase
         return Ok("Usuario registrado exitosamente");
     }
 
-
     [HttpPost("login")]
     public IActionResult Login(LoginModel loginModel)
     {
-        // Encripta la contraseña proporcionada por el usuario antes de verificarla
+        // Buscar el usuario por su correo en la base de datos
+        var usuario = _dbContext.Usuarios.FirstOrDefault(u => u.Correo == loginModel.Correo);
+
+        // Verificar si el usuario existe
+        if (usuario == null)
+        {
+            return NotFound("Usuario no encontrado");
+        }
+
+        // Encriptar la contraseña proporcionada por el usuario
         var contraseñaEncriptada = Encrypt(loginModel.Contraseña);
 
-        // Aquí realizas la lógica de autenticación
+        // Verificar si la contraseña encriptada coincide con la contraseña almacenada
+        if (usuario.Contraseña != contraseñaEncriptada)
+        {
+            return BadRequest("Credenciales incorrectas");
+        }
 
-        return Ok("Inicio de sesión exitoso");
+        // Autenticación exitosa, generar token JWT
+        var token = GenerateJwtToken(usuario);
+
+        // Devolver el token JWT en la respuesta
+        return Ok(new { Token = token });
+    }
+    private string GenerateJwtToken(Usuario usuario)
+    {
+        // Configurar los claims del token (información del usuario)
+        var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.NameIdentifier, usuario.Id.ToString()),
+                new Claim(ClaimTypes.Name, usuario.Correo)
+                // Puedes agregar más claims según las necesidades de tu aplicación
+            };
+
+        // Configurar la clave secreta y los parámetros de seguridad del token
+        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSecret));
+        var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+        var expires = DateTime.UtcNow.AddDays(7); // Duración del token (por ejemplo, 7 días)
+
+        // Construir el token JWT
+        var token = new JwtSecurityToken(
+            claims: claims,
+            expires: expires,
+            signingCredentials: creds
+        );
+
+        // Generar el token como string
+        return new JwtSecurityTokenHandler().WriteToken(token);
     }
 
     [HttpGet("roles")]
